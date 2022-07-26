@@ -41,6 +41,7 @@
     <table class="table table-success table-striped">
         <thead>
             <tr>
+                <th scope="col"> </th>
                 <th scope="col">Rašytojas</th>
                 <th scope="col">Pavadinimas</th>
                 <th scope="col">Leidykla</th>
@@ -48,17 +49,20 @@
             </tr>
         </thead>
         <tbody>
+            <?php
+            foreach ($_SESSION['elements'] as $key=> $elem) {
+            ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?=$key+1?></td>
+                <td><?=$elem['writer']?></td>
+                <td><?=$elem['book']?></td>
+                <td><?=$elem['publisher']?></td>
+                <td><?=$elem['pages']?></td>
             </tr>
+          <?php } ?>
         </tbody>
       </table>
-      <?php
-     
-      ?>
+    
 </div>
 </body>
 </html>
